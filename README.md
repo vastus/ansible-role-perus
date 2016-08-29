@@ -23,16 +23,28 @@ vars, etc.) should be mentioned here as well.
 A list of other roles hosted on Galaxy should go here, plus any details in
 regards to parameters that may need to be set for other roles, or variables
 that are used from other roles.
+-->
 
 ## Example Playbook
 
-Including an example of how to use your role (for instance, with variables
-passed in as parameters) is always nice for users too:
+```yaml
+# playbook.yml
+---
+- hosts: app
+  remote_user: ubuntu
+  roles:
+    -
+      role: .
+      become: true
+      become_method: sudo
+```
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
--->
+### Usage
+
+ansible-playbook \
+  --private-key=/path/to/private-key.pem \
+  --inventory-file=/path/to/hosts \
+  path/to/playbook.yml
 
 ## License
 
