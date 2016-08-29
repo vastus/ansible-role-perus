@@ -1,0 +1,14 @@
+galaxy_info:
+  author: Juho Hautala
+  description: Install basic packages needed for a fresh Ubuntu box on EC2
+  license: BSD
+  min_ansible_version: 1.2
+  platforms:
+    - name: Ubuntu
+      versions:
+        - trusty
+  galaxy_tags:
+    - fresh
+    - basic
+    - setup
+dependencies: []
