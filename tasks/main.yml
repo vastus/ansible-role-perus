@@ -1,16 +1,13 @@
 ---
 
-- name: Debuggaile
-  debug: var=remote_user
+- name: Upgrade system
+  apt: upgrade=full update_cache=yes cache_valid_time=7200
 
-# - name: Upgrade system
-#   apt: upgrade=full update_cache=yes cache_valid_time=7200
-#
-# - name: Install perus packages
-#   apt: name={{ item }} state=latest update_cache=yes
-#   with_items:
-#     - git
-#     - ack-grep
-#
-# - name: Copy settings to profile
-#   copy: src=settings.sh dest=/etc/profile.d
+- name: Install perus packages
+  apt: name={{ item }} state=latest update_cache=yes
+  with_items:
+    - git
+    - ack-grep
+
+- name: Copy settings to profile
+  copy: src=settings.sh dest=/etc/profile.d
