@@ -10,3 +10,6 @@
 
 - name: Copy settings to profile
   copy: src=settings.sh dest=/etc/profile.d
+
+- name: Restart system
+  command: reboot
