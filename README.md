@@ -41,10 +41,12 @@ that are used from other roles.
 
 ### Usage
 
+```shell
 ansible-playbook \
   --private-key=/path/to/private-key.pem \
   --inventory-file=/path/to/hosts \
   path/to/playbook.yml
+```
 
 ## License
 
