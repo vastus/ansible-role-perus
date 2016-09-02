@@ -1,3 +1,8 @@
-- hosts: localhost
+---
+- hosts: app
+  remote_user: ubuntu
   roles:
-    - .
+    -
+      role: .
+      become: true
+      become_method: sudo
