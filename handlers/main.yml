@@ -1,1 +1,12 @@
 ---
+- name: restart system
+  command: reboot
+
+- name: wait for boot up
+  become: false
+  local_action:
+    module: wait_for
+      host={{ inventory_hostname }}
+      port=22
+      timeout=180
+      delay=0
