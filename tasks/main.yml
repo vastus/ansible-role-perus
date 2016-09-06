@@ -1,6 +1,9 @@
 ---
 - name: Upgrade system
   apt: upgrade=full update_cache=yes cache_valid_time=7200
+  notify:
+    - restart system
+    - wait for boot up
 
 - name: Install perus packages
   apt: name={{ item }} state=latest update_cache=yes
@@ -10,6 +13,3 @@
 
 - name: Copy settings to profile
   copy: src=settings.sh dest=/etc/profile.d
-
-- name: Restart system
-  command: reboot
